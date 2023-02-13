@@ -11,7 +11,7 @@ make release:
 	./sh/release.sh
 
 run.docker:
-	./sh/run-prod.sh $(mix_env)
+	./sh/run-docker.sh $(mix_env)
 
 build:
 	docker build -t valleybot .
