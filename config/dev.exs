@@ -1,15 +1,25 @@
 import Config
 
 # Facebook messenger's bot configuration
+FB_PAGE_ACCESS_TOKEN =
+  System.get_env("FB_PAGE_ACCESS_TOKEN") ||
+    raise """
+    environment variable FB_PAGE_ACCESS_TOKEN missing
+    """
+
+FB_WEBHOOK_VERIFY_TOKEN =
+  System.get_env("FB_WEBHOOK_VERIFY_TOKEN") ||
+    raise """
+    environment variable FB_WEBHOOK_VERIFY_TOKEN missing
+    """
+
 config :valleybot,
   fb_config: %{
     api_version: "v16.0",
     message_url: "me/messages",
     base_url: "https://graph.facebook.com",
-    page_access_token:
-      System.get_env("FB_PAGE_ACCESS_TOKEN") ||
-        "EAAHM6DN6llcBAJ7mDMQF0Kgk8WnpCdLFE5NVbrBga7EH1yqwEaPxdQqBapfVdeIWdZCwZAGfhfAFGEZBMl7Ozd6pbZB6Wq8CkJkVBaZASWpCjKo4pEHyipQsZA2ZB5uBuIP68kC90AIqNnnmwT9wnqx9dGt2ZCTXSUOkawW6dGvb1qI0DQpxKpsa",
-    webhook_verify_token: System.get_env("FB_WEBHOOK_VERIFY_TOKEN") || "valley_bot"
+    page_access_token: FB_PAGE_ACCESS_TOKEN,
+    webhook_verify_token: FB_WEBHOOK_VERIFY_TOKEN
   }
 
 # Coin Geck API configuration
