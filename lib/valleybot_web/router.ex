@@ -14,12 +14,6 @@ defmodule ValleybotWeb.Router do
     plug :accepts, ["json"]
   end
 
-  scope "/", ValleybotWeb do
-    pipe_through :browser
-
-    # get "/", PageController, :home
-  end
-
   scope "/api", ValleybotWeb do
     pipe_through :api
 
