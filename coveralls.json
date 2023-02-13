@@ -1,0 +1,15 @@
+{
+  "skip_files": [
+    "lib/valleybot/application.ex",
+    "lib/valleybot_web.ex",
+    "lib/valleybot_web/telemetry.ex",
+    "lib/valleybot_web/router.ex",
+    "lib/valleybot_web/components/core_components.ex",
+    "lib/valleybot_web/views/error_helpers.ex",
+    "test/support/data_case.ex"
+  ],
+  "coverage_options": {
+    "treat_no_relevant_lines_as_covered": true,
+    "minimum_coverage": 60
+  }
+}
